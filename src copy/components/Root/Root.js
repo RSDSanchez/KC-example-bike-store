@@ -1,13 +1,12 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
-
+import { ConnectedRouter as Router } from 'connected-react-router';
 import App from '../App';
 
-export default function Root({ store, ...props }) {
+export default function Root({ store, history, ...props }) {
   return (
     <Provider store={store}>
-      <Router>
+      <Router history={history}>
         <App {...props} />
       </Router>
     </Provider>
